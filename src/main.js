@@ -1,3 +1,7 @@
+window.onload=()=>{
+    alert('请使用chrome浏览器打开')
+}
+
 let cube = document.querySelector('#cube');
 // 定义一个旋转初始量
 let init = {

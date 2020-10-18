@@ -118,6 +118,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"epB2":[function(require,module,exports) {
+window.onload = function () {
+  alert('请使用chrome浏览器打开');
+};
+
 var cube = document.querySelector('#cube'); // 定义一个旋转初始量
 
 var init = {
@@ -202,4 +206,4 @@ function Move() {
 
 Move();
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.23622f7b.js.map
+//# sourceMappingURL=main.b85f80e6.js.map
