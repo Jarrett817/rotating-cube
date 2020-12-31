@@ -1,7 +1,3 @@
-window.onload=()=>{
-    alert('请使用chrome浏览器打开')
-}
-
 let cube = document.querySelector('#cube');
 // 定义一个旋转初始量
 let init = {
@@ -9,7 +5,7 @@ let init = {
     y: 0
 }
 const isMobile = (function () {
-    return !!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+    return "ontouchstart" in document
 })();
 
 function rotateXY(down, move) {
@@ -20,9 +16,7 @@ function rotateXY(down, move) {
         x: init.x - speed * y + 'deg',
         y: init.y + speed * x + 'deg'
     }
-    let mobile3d = 'translate3d(19px, 0px, 100px)'
-    let pc3d = 'translate3d(38px, 0px, 200px)'
-    cube.style.transform = `rotateX(${result.x}) rotateY(${result.y}) rotateZ(0deg) ${isMobile ? mobile3d : pc3d}`
+    cube.style.transform = `rotateX(${result.x}) rotateY(${result.y})`
 
 }
 

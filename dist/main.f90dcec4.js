@@ -118,10 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"epB2":[function(require,module,exports) {
-window.onload = function () {
-  alert('请使用chrome浏览器打开');
-};
-
 var cube = document.querySelector('#cube'); // 定义一个旋转初始量
 
 var init = {
@@ -130,7 +126,7 @@ var init = {
 };
 
 var isMobile = function () {
-  return !!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+  return "ontouchstart" in document;
 }();
 
 function rotateXY(down, move) {
@@ -143,9 +139,7 @@ function rotateXY(down, move) {
     x: init.x - speed * y + 'deg',
     y: init.y + speed * x + 'deg'
   };
-  var mobile3d = 'translate3d(19px, 0px, 100px)';
-  var pc3d = 'translate3d(38px, 0px, 200px)';
-  cube.style.transform = "rotateX(".concat(result.x, ") rotateY(").concat(result.y, ") rotateZ(0deg) ").concat(isMobile ? mobile3d : pc3d);
+  cube.style.transform = "rotateX(".concat(result.x, ") rotateY(").concat(result.y, ")");
 }
 
 function isTransFormed() {
@@ -206,4 +200,4 @@ function Move() {
 
 Move();
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.b85f80e6.js.map
+//# sourceMappingURL=main.f90dcec4.js.map
